@@ -6,6 +6,20 @@
     <title>Portfolio - Christophe de la Paz</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #1d09cf 0px, #1d09cf 1px,
+        transparent 1px, transparent 20px
+    );
+    opacity: 0.1;
+    z-index: -1;
+}
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -154,6 +168,10 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
     </style>
 </head>
 <body>
@@ -167,11 +185,21 @@
         <a href="#projects">Projets</a>
         <a href="#contact">Contact</a>
     </nav>
-
+    <div class="marquee">
+        <span>Python | SQL | Power BI | Data Cleaning | Reporting</span>
+    </div>
+    <style>
+        .marquee span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+         
+    </style>
+    
     <div class="container">
         <section class="home-preview">
             <h2>Aperçu de mes projets</h2>
-            <iframe name="Images in comming"></iframe>
+            <iframe src="https://lookerstudio.google.com/u/1/reporting/b8098165-5ef0-4a74-a504-e84f0be466e5/page/p_9gpzzyshnd"></iframe>
         </section>
 
         <section id="about" class="about">
@@ -186,11 +214,11 @@
                 <p>Exploration des facteurs de risque et de prévention des maladies cardiovasculaires chez les femmes. Modèle prédictif et visualisations interactives inclus.</p>
                 <a href="https://lookerstudio.google.com/u/1/reporting/b8098165-5ef0-4a74-a504-e84f0be466e5/page/p_9gpzzyshnd" target="_blank">Voir le projet</a>
             </div>
-            <div class="project-item">
+            <!-- <div class="project-item">
                 <h3>Projet numéro 2</h3>
                 <p>Explication de mon projet numéro 2</p>
                 <a href="quelquechosequivapasfonctionner" target="_blank">Voir le projet 2</a>
-            </div>
+            </div> -->
         </section>
 
         <section id="contact" class="contact">
