@@ -186,7 +186,7 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="marquee">
-        <span>Python | SQL | Power BI | Data Cleaning | Reporting</span>
+        <span>Python | SQL | Power BI | Data Cleaning | Reporting                     Python | SQL | Power BI | Data Cleaning | Reporting</span>
     </div>
     <style>
         .marquee span {
@@ -199,7 +199,11 @@
     <div class="container">
         <section class="home-preview">
             <h2>Aperçu de mes projets</h2>
-            <iframe src="https://lookerstudio.google.com/u/1/reporting/b8098165-5ef0-4a74-a504-e84f0be466e5/page/p_9gpzzyshnd"></iframe>
+            <div class="slideshow">
+                <img src="I_will_survive.jpg" alt="Projet I Will Survive" class="active">
+                <img src="50_ans_age_pivot.jpg" alt="Projet I Will Survive">
+                <img src="Dashboard.jpg" alt="Projet I Will Survive">
+            </div>
         </section>
 
         <section id="about" class="about">
@@ -215,7 +219,7 @@
                 <a href="https://lookerstudio.google.com/u/1/reporting/b8098165-5ef0-4a74-a504-e84f0be466e5/page/p_9gpzzyshnd" target="_blank">Voir le projet</a>
             </div>
             <div class="project-item">
-                <h3>Projet à venir</h3>
+                <h3>Projet en cours</h3>
                 <p>Étude des facteurs influençant la réussite scolaire : Analysez des données éducatives pour identifier les variables qui impactent les performances des étudiants, telles que le temps d'étude, les activités parascolaires ou le soutien familial.</p>
                 <a href="quelquechosequivapasfonctionner" target="_blank">Voir le projet</a>
             </div>
@@ -231,5 +235,17 @@
     <footer>
         <p>&copy; 2025 Christophe de la Paz. Tous droits réservés.</p>
     </footer>
+    <script>
+        const images = document.querySelectorAll('.home-preview img');
+        let current = 0;
+
+        function changeImage() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(changeImage, 3000);
+    </script>
 </body>
 </html>
