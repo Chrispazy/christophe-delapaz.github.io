@@ -160,7 +160,8 @@
             max-width: 800px; /* Limite maximale */
             margin: 0 auto; /* Centrer le diaporama */
             overflow: hidden; /* Éviter les débordements */
-            height: auto;
+            height: 300px; /* Ajustez selon la taille souhaitée */
+            background-color: #f0f0f0; /* Optionnel, pour visualiser le conteneur */
         }
 
         .slideshow img {
@@ -197,29 +198,6 @@
 
     </style>
 </head>
-<script>
-    // Sélectionner toutes les images et initialiser l'index
-    const images = document.querySelectorAll('.slideshow img');
-    let current = 0;
-
-    function changeImage() {
-        // Supprimer la classe active de l'image actuelle
-        images[current].classList.remove('active');
-
-        // Passer à l'image suivante
-        current = (current + 1) % images.length;
-
-        // Ajouter la classe active à la nouvelle image
-        images[current].classList.add('active');
-    }
-
-    // Démarrer le diaporama toutes les 3 secondes
-    setInterval(changeImage, 3000);
-
-    // Initialiser la première image comme active au chargement
-    images[current].classList.add('active');
-</script>
-
 <body>
     <header>
         <h1>Christophe de la Paz</h1>
@@ -246,7 +224,7 @@
         <section class="home-preview">
             <h2>Aperçu de mes projets</h2>
             <div class="slideshow">
-                <img src="i_will_survive/I_will_survive.jpg." alt="Projet I Will Survive">
+                <img src="i_will_survive/I_will_survive.jpg" alt="Projet I Will Survive">
                 <img src="i_will_survive/50_ans_age_pivot.jpg" alt="Projet I Will Survive">
                 <img src="i_will_survive/Dashboard.jpg" alt="Projet I Will Survive">
             </div>
@@ -281,5 +259,33 @@
     <footer>
         <p>&copy; 2025 Christophe de la Paz. Tous droits réservés.</p>
     </footer>
+    <script>
+        // Sélectionner toutes les images et initialiser l'index
+        const images = document.querySelectorAll('.slideshow img');
+        let current = 0;
+        
+        if (images.length > 0) {
+            // Initialiser la première image comme active
+            images[current].classList.add('active');
+
+            function changeImage() {
+                // Supprimer la classe active de l'image actuelle
+                images[current].classList.remove('active');
+        
+                // Passer à l'image suivante
+                current = (current + 1) % images.length;
+        
+                // Ajouter la classe active à la nouvelle image
+                images[current].classList.add('active');
+            }
+        
+            // Démarrer le diaporama toutes les 3 secondes
+            setInterval(changeImage, 3000);       
+        }
+        else {
+            console.error("Aucune image trouvée dans le diaporama.");
+        }
+    </script>
+    
 </body>
 </html>
